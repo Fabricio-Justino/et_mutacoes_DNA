@@ -57,7 +57,7 @@ public class DoubleLinkedQueue<T> {
      * Adiciona um elemento no começo da fila.
      * <br>
      * complexidade: O(1)
-     * 
+     *
      * @param value o valor que será inserido
      */
     public void addFirst(T value) {
@@ -71,15 +71,13 @@ public class DoubleLinkedQueue<T> {
         this.trailer = node;
 
         size++;
-
-
     }
 
     /**
      * método que <strong>retorna e remove</strong> o elemento contido no {@link #header}, ou seja, o último elemento da fila.
      *<br>
      * complexidade: O(1)
-     * 
+     *
      * @return T: tipo de dado da fila
      * @throws NoSuchElementException se o <strong>tamanho da fila</strong> for <strong>0</strong>
      */
@@ -102,7 +100,7 @@ public class DoubleLinkedQueue<T> {
      * método que <strong>retorna e remove</strong> o elemento contido no {@link #trailer}, ou seja, o primeiro elemento da fila.
      *<br>
      * complexidade: O(1)
-     * 
+     *
      * @return T: tipo de dado da fila
      * @throws NoSuchElementException se o <strong>tamanho da fila</strong> for <strong>0</strong>
      */
@@ -143,11 +141,11 @@ public class DoubleLinkedQueue<T> {
     public T showFirst() {
         return !this.isEmpty() ? this.trailer.value : null;
     }
-    
+
     public int size() {
         return this.size;
     }
-    
+
     public boolean isEmpty() {
         return this.size == 0;
     }
