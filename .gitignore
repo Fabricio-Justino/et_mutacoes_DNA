@@ -1,6 +1,7 @@
 # intelij files
 .idea/
 .out/
+dist/
 
 # Compiled class file
 *.class

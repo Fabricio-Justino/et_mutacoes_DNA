@@ -142,6 +142,12 @@ public class DoubleLinkedQueue<T> {
         return !this.isEmpty() ? this.trailer.value : null;
     }
 
+    public void clear() {
+        this.size = 0;
+        this.trailer = null;
+        this.header  = null;
+    }
+
     public int size() {
         return this.size;
     }
