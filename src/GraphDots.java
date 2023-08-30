@@ -8,11 +8,25 @@ public class GraphDots {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         
+        double MAX_X = 0;
+
+        if (args.length != 1) {
+            System.err.println("Informe um número");
+            System.exit(1);
+        } else {
+            try {
+                MAX_X = Double.parseDouble(args[0]);
+            } catch (NumberFormatException ex) {
+                System.err.println("argumento deve ser um número");
+                System.exit(1);
+            }
+        }
+
         char[] DNAArray = {'D', 'N', 'A'};
         StringBuilder DNA = new StringBuilder();
         String dna = "";
 
-        final double MAX_X = 1e4;
+        
         final double[] y = new double[(int) MAX_X];
 
         final DoubleLinkedQueue<DoubleLinkedQueue<Character>> queue = new DoubleLinkedQueue<>();
