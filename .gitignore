@@ -2,6 +2,9 @@
 .idea/
 .out/
 dist/
+graficos/
+out/
+xy.txt
 
 # Compiled class file
 *.class
