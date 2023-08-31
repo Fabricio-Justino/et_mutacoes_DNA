@@ -9,8 +9,9 @@ public class GraphDots {
         Locale.setDefault(Locale.US);
         
         double MAX_X = 0;
-
-        if (args.length != 1) {
+        if(args.length == 0){
+            MAX_X = 1e4;
+        } else if (args.length > 1) {
             System.err.println("Informe um número");
             System.exit(1);
         } else {
@@ -22,6 +23,7 @@ public class GraphDots {
             }
         }
 
+        System.out.println("-> Running ...");
         char[] DNAArray = {'D', 'N', 'A'};
         StringBuilder DNA = new StringBuilder();
         String dna = "";
@@ -31,6 +33,7 @@ public class GraphDots {
 
         final DoubleLinkedQueue<DoubleLinkedQueue<Character>> queue = new DoubleLinkedQueue<>();
 
+        System.out.println("-> Gerando cadeias");
         for (int i = 0; i < MAX_X; i++) {
             for (int j = 0; j < i + 1; j++) {
                 DNA.append(DNAArray[(int) Math.floor(Math.random() * DNAArray.length)]);
@@ -47,9 +50,11 @@ public class GraphDots {
             y[i] = DNAAnalysis.op;
             DNAAnalysis.op = 0;
         }
+        System.out.println("-> Cadeias Geradas");
 
         File file = new File(".\\xy.txt");
 
+        System.out.println("-> Escrevendo no arquivo ...");
         try (FileWriter writer = new FileWriter(file)) {
             for (int xx = 0; xx < MAX_X; xx++) {
                 double yy = y[xx];
@@ -59,5 +64,6 @@ public class GraphDots {
             throw new RuntimeException(e);
         }
 
+        System.out.println("-> Pontos Gerados");
     }
 }
