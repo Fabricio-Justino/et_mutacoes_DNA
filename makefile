@@ -5,6 +5,8 @@ SRC = ./src
 MAX_X = 10000
 DNA = DNADNAANDNDA
 
+FILE_PATH = none
+
 all: dots graph
 
 dots:
@@ -16,6 +18,9 @@ graph: dots
 
 run: dots
 	@java -cp $(OUT) Main $(DNA)
+
+run_file: dots
+	@java -cp $(OUT) FileReader $(FILE_PATH)
 
 .PHONY: clean
 

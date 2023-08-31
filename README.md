@@ -103,3 +103,39 @@ make run DNA=<sequência>
 Substitua `Sequência` por uma sequência de exemplo
 ou um número inteiro para gerar uma sequência
 aleatória.
+
+## Instruções de Compilação Atravéz de arquivo
+Para compilar atravéz do arquivo e obter os resultados finais da
+análise de degradação, siga estes passos:
+
+1. Navegue até o diretório 'et_mutacoes_DNA'.
+2. A compilação e análise de resultados podem ser
+   feitas através do prompt de comando seguindo
+   estas etapas:
+
+```bash
+javac -d ./dist ./src/*.java
+java -cp ./dist FileReader <local_do_arquivo>
+```
+
+3. Alternativamente, você pode usar o Makefile
+   fornecido:
+
+```bash
+make run_file FILE_PATH=<local_do_arquivo>
+```
+
+Substitua `local_do_arquivo` por um local absoluto ou relativo à pasta
+'et_mutacoes_DNA', também pode ser substituído por *sample* onde ira gerar
+um arquivo de exemplo chamado *sample_xy.txt* 
+
+### AVISO
+O arqivo deve obedecer a sequinte regra: *Uma única sequência por linha*, como 
+por exemplo:
+
+```txt
+DNADNA
+AAAADA
+DNAAND
+NNNNNA
+```
