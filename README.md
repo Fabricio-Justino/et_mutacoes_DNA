@@ -104,7 +104,7 @@ Substitua `Sequência` por uma sequência de exemplo
 ou um número inteiro para gerar uma sequência
 aleatória.
 
-## Instruções de Compilação Atravéz de arquivo
+## Instruções de Compilação Através de arquivo
 Para compilar atravéz do arquivo e obter os resultados finais da
 análise de degradação, siga estes passos:
 
