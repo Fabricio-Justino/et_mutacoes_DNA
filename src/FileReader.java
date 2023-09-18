@@ -31,7 +31,6 @@ public class FileReader {
     }
 
     private static void readFile(File file) {
-
         try (Scanner reader = new Scanner(file)) {
 
             String line = null;
@@ -40,9 +39,14 @@ public class FileReader {
                 line = reader.nextLine();
                 DNAAnalysis.checkDNA(line);
                 DoubleLinkedQueue<DoubleLinkedQueue<Character>> queue = new DoubleLinkedQueue<>();
+               
+                double start = System.nanoTime();
                 DNAAnalysis.makeDNA(line, queue);
                 DNAAnalysis.apllyDegenerations(queue);
-                builder.append(String.format("-> degeneração: %s%n", queue.toString().replaceAll("[{}, ]", "")));
+                double end = System.nanoTime();
+
+                builder.append(String.format("-> degeneração: %s%n", queue.toString().replaceAll("[{}, ]", "")))
+                .append(String.format("tempo: %.2f s%n", ((end - start) / 1e9)));
             }
             System.out.println(builder);
         } catch (FileNotFoundException ex) {
@@ -62,9 +66,8 @@ public class FileReader {
             System.exit(1);
         }
         
-        final String FILE_PATH = args[0].replaceAll("[\\/]", File.pathSeparator);
+        final String FILE_PATH = args[0];
         final File FILE = new File(FILE_PATH);
-
         if (FILE.exists()) readFile(FILE);
         else System.out.println("arquivo não encontrado");
     }

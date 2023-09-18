@@ -85,8 +85,15 @@ public class DNAAnalysis {
 
             if (!secondSequence.isEmpty())
                 queue.addFirst(secondSequence);
+            else if (queue.size() > 1 && !firstSequence.isEmpty()) {
+                char ch = queue.showFirst().showFirst();
+                if (firstSequence.showLast() == ch) {
+                    queue.showFirst().concat(firstSequence);
+                    firstSequence = null;
+                }
+            }
 
-            if (!firstSequence.isEmpty())
+            if (firstSequence != null && !firstSequence.isEmpty())
                 queue.addFirst(firstSequence);
 
             if (!queue.isEmpty() && queue.showLast().showLast() == degeneratedCharacter) {

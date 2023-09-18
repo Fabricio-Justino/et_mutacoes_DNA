@@ -119,24 +119,41 @@ public class DoubleLinkedQueue<T> {
     }
 
     /**
-     * método que <strong>somente retorna</strong> o elemento contido no {@link #header}, ou seja, o último elemento da fila.
-     *<br>
-     * complexidade: O(1)
-     *
+     * método que <strong>somente retorna</strong> o elemento contido no {@link #header}, ou seja, o último
+     * elemento da fila.
+     * 
      * @return T: tipo de dado da fila ou null se a fila estiver vazia
      * @throws NoSuchElementException se o <strong>tamanho da fila</strong> for <strong>0</strong>
+     * @complexity O(1)
      */
     public T showLast() {
         return !this.isEmpty() ? this.header.value : null;
     }
 
+
+    public void concat(DoubleLinkedQueue<T> queue) {
+        if (isEmpty()) {
+            this.header = queue.header;
+            this.trailer = queue.trailer;
+        } else if (!queue.isEmpty()) {
+           Node node = queue.trailer;
+           this.header.next = node;
+           node.prev = this.header;
+           this.header = queue.header;
+           queue.trailer = this.trailer;
+
+           this.size += queue.size;
+           queue.size += this.size;
+        }
+    }
+
     /**
      * método que <strong>somente retorna</strong> o elemento contido no {@link #trailer}, ou seja, o primeiro elemento da fila.
      *<br>
-     * complexidade: O(1)
      *
      * @return T: tipo de dado da fila ou null se a fila estiver vazia
      * @throws NoSuchElementException se o <strong>tamanho da fila</strong> for <strong>0</strong>
+     * @complexity O(1)
      */
     public T showFirst() {
         return !this.isEmpty() ? this.trailer.value : null;

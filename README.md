@@ -71,8 +71,10 @@ make graph
 ou
 
 ```bash
-make graph MAX_X=<número de observações>
+make graph MAX_X=<número de observações>  [GRAPH_TIME=<ON/OFF>]
 ```
+
+argumentos entre conchetes são opcionais.
 
 ## Instruções de Compilação para Obter Resultados
 Para compilar e obter os resultados finais da

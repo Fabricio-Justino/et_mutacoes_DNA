@@ -6,6 +6,7 @@ MAX_X = 10000
 DNA = DNADNAANDNDA
 
 FILE_PATH = none
+GRAPH_TIME = OFF
 
 all: dots graph
 
@@ -13,7 +14,7 @@ dots:
 	@javac -d $(OUT) $(SRC)/*.java
 
 graph: dots
-	@java -cp $(OUT) GraphDots $(MAX_X)
+	@java -cp $(OUT) GraphDots $(MAX_X) $(GRAPH_TIME)
 	@python ./src/GraphPlot.py
 
 run: dots
