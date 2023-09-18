@@ -37,7 +37,7 @@ public class GraphDots {
         
         final double[] y = new double[(int) MAX_X];
 
-        final DoubleLinkedQueue<DoubleLinkedQueue<Character>> queue = new DoubleLinkedQueue<>();
+        final DoubleLinkedList<DoubleLinkedList<Character>> queue = new DoubleLinkedList<>();
 
         System.out.println("-> Gerando cadeias");
         for (int i = 0; i < MAX_X; i++) {

@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
  *
  * @param <T> : tipo da fila
  */
-public class DoubleLinkedQueue<T> {
+public class DoubleLinkedList<T> {
 
     private class Node {
         Node next;
@@ -27,7 +27,7 @@ public class DoubleLinkedQueue<T> {
     private Node header;
     private Node trailer;
 
-    DoubleLinkedQueue() {
+    DoubleLinkedList() {
         this.size = 0;
         this.header = null;
         this.trailer = null;
@@ -131,7 +131,7 @@ public class DoubleLinkedQueue<T> {
     }
 
 
-    public void concat(DoubleLinkedQueue<T> queue) {
+    public void concat(DoubleLinkedList<T> queue) {
         if (isEmpty()) {
             this.header = queue.header;
             this.trailer = queue.trailer;

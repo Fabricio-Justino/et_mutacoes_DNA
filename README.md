@@ -74,11 +74,7 @@ ou
 make graph MAX_X=<número de observações>  [GRAPH_TIME=<ON/OFF>]
 ```
 
-<<<<<<< HEAD
 argumentos entre conchetes são opcionais.
-=======
-Obs.: Podem haver problemas quanto ao sistema operacional utilizado na execução dos arquivos. O arquivo _GraphDots.java_ deve concordar com o padrão de caminho do sistema. ".\\xy.txt" para Windows e "./xy.txt" para Linux. Caso hajam erros durante a geração do gráfico, certifique-se desse detalhe.
->>>>>>> origin
 
 ## Instruções de Compilação para Obter Resultados
 Para compilar e obter os resultados finais da

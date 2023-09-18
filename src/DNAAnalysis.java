@@ -18,12 +18,12 @@ public class DNAAnalysis {
      * @param DNA: String contendo o DNA
      * @param queue: Fila que será atribuída a sequencia
      */
-    public static void makeDNA(String DNA, DoubleLinkedQueue<DoubleLinkedQueue<Character>> queue) {
+    public static void makeDNA(String DNA, DoubleLinkedList<DoubleLinkedList<Character>> queue) {
         char before, now;
         now = DNA.charAt(0);
         before = '$';
 
-        DoubleLinkedQueue<Character> ruptSpot = null;
+        DoubleLinkedList<Character> ruptSpot = null;
 
         for (int i = 0; i < DNA.length(); ++i) {
             now = DNA.charAt(i);
@@ -31,7 +31,7 @@ public class DNAAnalysis {
             if (now == before) {
                 queue.showLast().addLast(now);
             } else {
-                ruptSpot = new DoubleLinkedQueue<>();
+                ruptSpot = new DoubleLinkedList<>();
                 ruptSpot.addLast(now);
                 queue.addLast(ruptSpot);
             }
@@ -63,9 +63,9 @@ public class DNAAnalysis {
         return base1;
     }
 
-    public static void apllyDegenerations(DoubleLinkedQueue<DoubleLinkedQueue<Character>> queue) {
-        DoubleLinkedQueue<Character> firstSequence = null;
-        DoubleLinkedQueue<Character> secondSequence = null;
+    public static void apllyDegenerations(DoubleLinkedList<DoubleLinkedList<Character>> queue) {
+        DoubleLinkedList<Character> firstSequence = null;
+        DoubleLinkedList<Character> secondSequence = null;
 
         if (queue.size() <= 1) {
             System.out.println("Sem degeneração Nesta cadeia");
@@ -99,7 +99,7 @@ public class DNAAnalysis {
             if (!queue.isEmpty() && queue.showLast().showLast() == degeneratedCharacter) {
                 queue.showLast().addLast(degeneratedCharacter);
             } else {
-                DoubleLinkedQueue<Character> characterDoubleLinkedQueue = new DoubleLinkedQueue<>();
+                DoubleLinkedList<Character> characterDoubleLinkedQueue = new DoubleLinkedList<>();
                 characterDoubleLinkedQueue.addLast(degeneratedCharacter);
                 queue.addLast(characterDoubleLinkedQueue);
             }

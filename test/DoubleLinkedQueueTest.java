@@ -6,11 +6,11 @@ import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DoubleLinkedQueueTest {
-    private DoubleLinkedQueue<Character> queue;
+    private DoubleLinkedList<Character> queue;
 
     @BeforeEach
     void setUp() {
-        this.queue = new DoubleLinkedQueue<>();
+        this.queue = new DoubleLinkedList<>();
     }
 
     @Test

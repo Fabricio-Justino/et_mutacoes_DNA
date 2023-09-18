@@ -37,8 +37,9 @@ public class FileReader {
             StringBuilder builder = new StringBuilder();
             while (reader.hasNextLine()) {
                 line = reader.nextLine();
+                builder.append("lenght: ").append(line.length()).append('\n');
                 DNAAnalysis.checkDNA(line);
-                DoubleLinkedQueue<DoubleLinkedQueue<Character>> queue = new DoubleLinkedQueue<>();
+                DoubleLinkedList<DoubleLinkedList<Character>> queue = new DoubleLinkedList<>();
                
                 double start = System.nanoTime();
                 DNAAnalysis.makeDNA(line, queue);

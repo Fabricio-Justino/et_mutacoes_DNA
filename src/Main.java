@@ -25,7 +25,7 @@ public class Main {
         DNAAnalysis.checkDNA(DNA.toString());
 
         System.out.println("Sua cedeia: " + DNA);
-        DoubleLinkedQueue<DoubleLinkedQueue<Character>> queue = new DoubleLinkedQueue<>();
+        DoubleLinkedList<DoubleLinkedList<Character>> queue = new DoubleLinkedList<>();
         DNAAnalysis.makeDNA(DNA.toString(), queue);
         //System.out.println("agora: " + queue);
         DNAAnalysis.apllyDegenerations(queue);
